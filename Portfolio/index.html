@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Théo</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js" integrity="sha512-2N6afhHcaOPaBztibhzvEp9MBtXoG+6YQ5AkllMJKHrZKUUiHHmIc1bEafMDjG+LnTtSIYjaKdg2BdZqqZkkBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  
+    <div id="fullpage">
+
+  
+
+
+        <div class="section">
+            <h1> Portfolio Théo D </h1> 
+        </div>
+
+        <div class="section">
+          <div id="hi"> <h2> Hi I'm Théo </h2>
+            <span id="hand">👋</span>
+            </div>  
+
+            <p id="p-hi"> 20yo graphic and UI designer based in France. Currently studying at Lens’ IUT in BUT MMI <br> <br>   </p>
+            
+
+        </div>
+        
+        <div class="section">
+            <div class="slide">Slide 2.1</div>
+            <div class="slide">Slide 2.2</div>
+            <div class="slide">Slide 2.3</div>
+        </div>
+        <div class="section">Section 3</div>
+    </div>
+
+
+    <script>  new fullpage('#fullpage', {
+        navigation: true,
+        responsiveWidth: 700,
+        anchors: ['home', 'about-us', 'contact', 'starfoulah'],
+        parallax: true,
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+        },
+    });
+</script>
+
+    
+</body>
+</html>
