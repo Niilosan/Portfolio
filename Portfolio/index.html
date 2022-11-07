@@ -7,7 +7,11 @@
     <title>Théo</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js" integrity="sha512-2N6afhHcaOPaBztibhzvEp9MBtXoG+6YQ5AkllMJKHrZKUUiHHmIc1bEafMDjG+LnTtSIYjaKdg2BdZqqZkkBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="fullpage.continuousHorizontal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
 </head>
 <body>
   
@@ -17,12 +21,51 @@
 
 
         <div class="section">
-            <h1> Portfolio Théo D </h1> 
+            <h1 class="ml11">
+                <span class="text-wrapper">
+                  <span class="line line1"></span>
+                  <span class="letters">Portfolio</span>
+                </span>
+              </h1>              
+
+              <script>   // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml11 .letters');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+                
+                anime.timeline({loop: true})
+                  .add({
+                    targets: '.ml11 .line',
+                    scaleY: [0,1],
+                    opacity: [0.5,1],
+                    easing: "easeOutExpo",
+                    duration: 700
+                  })
+                  .add({
+                    targets: '.ml11 .line',
+                    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                    easing: "easeOutExpo",
+                    duration: 700,
+                    delay: 100
+                  }).add({
+                    targets: '.ml11 .letter',
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 600,
+                    offset: '-=775',
+                    delay: (el, i) => 34 * (i+1)
+                  }).add({
+                    targets: '.ml11',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                  });</script>
         </div>
 
         <div class="section">
-          <div id="hi"> <h2> Hi I'm Théo </h2>
+          <div class="hi"> <h2> Hi I'm Théo </h2>
             <span id="hand">👋</span>
+            <script> ScrollReveal().reveal('.hi');</script>
             </div>  
 
             <p id="p-hi"> 20yo graphic and UI designer based in France. Currently studying at Lens’ IUT in BUT MMI <br> <br>   </p>
@@ -63,36 +106,6 @@
 
         
     });
-
-    new fullpage('.horizontal', {
-        navigation: true,
-        responsiveWidth: 700,
-        anchors: ['home', 'about-us', 'contact', 'test'],
-        parallax: true,
-        reset: true,
-        scrollHorizontally: true,
-        onLeave: function(origin, destination, direction){
-            console.log("Leaving section" + origin.index);
-
-            
-        }
-
-        
-
-        
-    });
-
-
-    
-    
-    
-
-    ScrollReveal().reveal('#hi');
-
-
-    var splide = new Splide( '.splide' );
-splide.mount();
-
 </script>
 
 </body>
