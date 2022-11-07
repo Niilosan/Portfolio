@@ -2,8 +2,8 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    
 }
-
 
 .section{
     height: 100vh;
@@ -50,10 +50,10 @@ h2{
 #hand{
     width: 20%;
     margin-left: 0.7em;
-    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;        /* Change to speed up or slow down */
-    animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    animation-name: wave-animation;  
+    animation-duration: 2.5s;       
+    animation-iteration-count: infinite;  
+    transform-origin: 70% 70%;       
     display: inline-block;
     font-size: 100px;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -90,3 +90,32 @@ h2{
     animation-delay: 1.5s;
     animation-fill-mode: backwards;
   }
+
+
+  .section1 {
+    text-align:center;
+    font-size: 3em;
+    
+    /* This is important to make the button position relative to the section*/
+    position:relative;
+  }
+  
+  
+  /**
+  Absolute in relation to the section
+  */
+  #moveRight{
+    top: 20px;
+    left: 20px;
+    position:absolute;
+    z-index:999;
+    font-size: 1em;
+    cursor:pointer;
+  }
+  
+.splide__slide{
+    display: block;
+    background: red !important;
+    width: 80%;
+    height: 500px;
+}

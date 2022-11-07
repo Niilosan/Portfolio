@@ -7,6 +7,7 @@
     <title>Théo</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js" integrity="sha512-2N6afhHcaOPaBztibhzvEp9MBtXoG+6YQ5AkllMJKHrZKUUiHHmIc1bEafMDjG+LnTtSIYjaKdg2BdZqqZkkBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="fullpage.continuousHorizontal.min.js"></script>
 </head>
 <body>
   
@@ -29,31 +30,70 @@
 
         </div>
         
-        <div class="section">
-            <div class="slide">Slide 2.1</div>
-            <div class="slide">Slide 2.2</div>
-            <div class="slide">Slide 2.3</div>
+        <div class="section horizontal">
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                      <div class="splide__list">
+                          <div class="splide__slide">Slide 01</div>
+                          <div class="splide__slide">Slide 02</div>
+                          <div class="splide__slide">Slide 03</div>
+                      </div>
+                </div>
+            </section>
         </div>
         <div class="section">Section 3</div>
     </div>
 
 
+    
+
     <script>  new fullpage('#fullpage', {
         navigation: true,
         responsiveWidth: 700,
-        anchors: ['home', 'about-us', 'contact', 'starfoulah'],
+        anchors: ['home', 'about-us', 'contact', 'test'],
         parallax: true,
         reset: true,
         onLeave: function(origin, destination, direction){
             console.log("Leaving section" + origin.index);
 
             
-        },
+        }
+
+        
+
+        
     });
 
-    ScrollReveal().reveal('#hi');
-</script>
+    new fullpage('.horizontal', {
+        navigation: true,
+        responsiveWidth: 700,
+        anchors: ['home', 'about-us', 'contact', 'test'],
+        parallax: true,
+        reset: true,
+        scrollHorizontally: true,
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+
+            
+        }
+
+        
+
+        
+    });
+
 
     
+    
+    
+
+    ScrollReveal().reveal('#hi');
+
+
+    var splide = new Splide( '.splide' );
+splide.mount();
+
+</script>
+
 </body>
 </html>
