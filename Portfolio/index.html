@@ -43,10 +43,15 @@
         responsiveWidth: 700,
         anchors: ['home', 'about-us', 'contact', 'starfoulah'],
         parallax: true,
+        reset: true,
         onLeave: function(origin, destination, direction){
             console.log("Leaving section" + origin.index);
+
+            
         },
     });
+
+    ScrollReveal().reveal('#hi');
 </script>
 
     
